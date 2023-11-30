@@ -1,0 +1,4 @@
+    .text
+    .
+_start:
+    call 

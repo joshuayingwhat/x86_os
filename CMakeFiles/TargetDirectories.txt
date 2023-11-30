@@ -1,0 +1,11 @@
+/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles/rebuild_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles/edit_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/boot/CMakeFiles/rebuild_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/boot/CMakeFiles/edit_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/boot/CMakeFiles/boot.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/loader/CMakeFiles/rebuild_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/loader/CMakeFiles/edit_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/loader/CMakeFiles/loader.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/CMakeFiles/rebuild_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/CMakeFiles/edit_cache.dir
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/CMakeFiles/kernel.dir

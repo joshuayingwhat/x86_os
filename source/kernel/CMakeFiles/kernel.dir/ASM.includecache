@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/init/start.S
+os_cfg.h
+/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/init/os_cfg.h
+
+source/kernel/include/os_cfg.h
+
