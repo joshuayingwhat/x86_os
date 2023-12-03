@@ -33,6 +33,13 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.o: source/kernel/init/init.c \
   source/kernel/dev/time.h \
   source/kernel/include/cpu/irq.h
 
+source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c \
+  source/kernel/include/tools/log.h
+
+
+source/kernel/include/tools/log.h:
+
+source/kernel/tools/log.c:
 
 source/comm/boot_info.h:
 
