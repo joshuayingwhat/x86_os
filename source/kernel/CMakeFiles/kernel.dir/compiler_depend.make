@@ -35,6 +35,10 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.o: source/kernel/init/init.c \
   source/kernel/include/tools/log.h \
   source/kernel/include/os_cfg.h
 
+source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o: source/kernel/tools/klib.c \
+  source/kernel/include/tools/klib.h \
+  source/comm/types.h
+
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c \
   source/kernel/include/tools/log.h \
   source/comm/cpu_instr.h \
@@ -42,6 +46,10 @@ source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c \
 
 
 source/kernel/tools/log.c:
+
+source/kernel/include/tools/klib.h:
+
+source/kernel/tools/klib.c:
 
 source/kernel/include/tools/log.h:
 
