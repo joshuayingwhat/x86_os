@@ -37,15 +37,21 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.o: source/kernel/init/init.c \
 
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o: source/kernel/tools/klib.c \
   source/kernel/include/tools/klib.h \
-  source/comm/types.h
+  source/comm/types.h \
+  /usr/local/Cellar/x86_64-elf-gcc/13.1.0/lib/gcc/x86_64-elf/13.1.0/include/stdarg.h
 
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c \
+  /usr/local/Cellar/x86_64-elf-gcc/13.1.0/lib/gcc/x86_64-elf/13.1.0/include/stdarg.h \
   source/kernel/include/tools/log.h \
+  source/kernel/include/tools/klib.h \
+  source/comm/types.h \
   source/comm/cpu_instr.h \
   source/comm/types.h
 
 
 source/kernel/tools/log.c:
+
+/usr/local/Cellar/x86_64-elf-gcc/13.1.0/lib/gcc/x86_64-elf/13.1.0/include/stdarg.h:
 
 source/kernel/include/tools/klib.h:
 

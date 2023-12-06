@@ -1,7 +1,7 @@
 #include "tools/klib.h"
 #include "comm/types.h"
 // 字符串的复制
-void kernel_strcpy(char *dest,char *src)
+void kernel_strcpy(char *dest, char *src)
 {
     if (!dest || !src)
     {
@@ -117,4 +117,104 @@ int kernel_memcmp(void *d1, void *d2, int size)
         }
     }
     return 0;
+}
+
+void kernel_sprintf(char *buffer, const char *fmt, ...)
+{
+    va_list args;
+    va_start(args, fmt);
+
+    kernel_vsprintf(buffer, fmt, args);
+    va_end(args);
+}
+
+void kernel_itoa(char *buf, int num, int base)
+{
+    static const char *num2ch = {"FEDCBA9876543210123456789ABCDEF"};
+    char *p = buf;
+    int old_num = num;
+    if ((base != 2) && (base != 8) && (base != 10) && (base != 16))
+    {
+        *p = '\0';
+        return;
+    }
+    if ((num < 0) && (base == 10))
+    {
+        *p++ = '-';
+    }
+    do
+    {
+        char ch = num2ch[num % base + 15];
+        *p++ = ch;
+        num /= base;
+    } while (num);
+    *p-- = '\0';
+    char *start = (old_num > 0) ? buf : buf + 1;
+    while (start < p)
+    {
+        char ch = *start;
+        *start = *p;
+        *p = ch;
+
+        p--;
+        start++;
+    }
+}
+
+void kernel_vsprintf(char *buffer, const char *fmt, va_list args)
+{
+    enum
+    {
+        NORMAL,
+        READ_FMT
+    } state = NORMAL;
+    char ch;
+    char *curr = buffer;
+    while ((ch = *fmt++))
+    {
+        switch (state)
+        {
+        // 普通字符
+        case NORMAL:
+            if (ch == '%')
+            {
+                state = READ_FMT;
+            }
+            else
+            {
+                *curr++ = ch;
+            }
+            break;
+        // 格式化控制字符，只支持部分
+        case READ_FMT:
+            if (ch == 'd')
+            {
+                int num = va_arg(args, int);
+                kernel_itoa(curr, num, 10);
+                curr += kernel_strlen(curr);
+            }
+            else if (ch == 'x')
+            {
+                int num = va_arg(args, int);
+                kernel_itoa(curr, num, 16);
+                curr += kernel_strlen(curr);
+            }
+            else if (ch == 'c')
+            {
+                char c = va_arg(args, int);
+                *curr = c;
+            }
+            else if (ch == 's')
+            {
+                const char *str = va_arg(args, char *);
+                int len = kernel_strlen(str);
+                while (len--)
+                {
+                    *curr++ = *str++;
+                }
+            }
+            state = NORMAL;
+            break;
+        }
+    }
 }

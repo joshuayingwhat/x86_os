@@ -1,6 +1,7 @@
 #ifndef KLIB_H
 #define KLIB_H
 #include "comm/types.h"
+#include "stdarg.h"
 
 void kernel_strcpy(char *dest, char *src); // 字符串的复制
 
@@ -15,4 +16,8 @@ void kernel_memcpy(void *dest, void *src, int size); // 内存复制
 void kernel_memset(void *dest, uint8_t v, int size);
 
 int kernel_memcmp(void *d1, void *d2, int size);
+
+void kernel_sprintf(char *buffer, const char *fmt, ...);
+
+void kernel_vsprintf(char *buffer, const char *fmt, va_list args); // 格式化字符串
 #endif
