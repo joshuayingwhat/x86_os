@@ -1,3 +1,0 @@
-    .text
-_start:
-    call 
