@@ -16,6 +16,8 @@
         "os_cfg.h": "c",
         "elf.h": "c",
         "time.h": "c",
-        "irq.h": "c"
+        "irq.h": "c",
+        "klib.h": "c",
+        "log.h": "c"
     },
 }

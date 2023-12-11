@@ -1,5 +1,7 @@
 #include "tools/klib.h"
 #include "comm/types.h"
+#include "tools/log.h"
+#include "comm/cpu_instr.h"
 // 字符串的复制
 void kernel_strcpy(char *dest, char *src)
 {
@@ -216,5 +218,15 @@ void kernel_vsprintf(char *buffer, const char *fmt, va_list args)
             state = NORMAL;
             break;
         }
+    }
+}
+
+void pannic(const char *file, int line, const char *func, const char *cond)
+{
+    log_prinf("assert failed! %s", cond);
+    log_prinf("file:%s\nline:%d\nfunc:%s\n", file, line, func);
+    for (;;)
+    {
+        hlt(); // 死机
     }
 }

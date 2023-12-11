@@ -1,5 +1,6 @@
 #ifndef KLIB_H
 #define KLIB_H
+
 #include "comm/types.h"
 #include "stdarg.h"
 
@@ -20,4 +21,15 @@ int kernel_memcmp(void *d1, void *d2, int size);
 void kernel_sprintf(char *buffer, const char *fmt, ...);
 
 void kernel_vsprintf(char *buffer, const char *fmt, va_list args); // 格式化字符串
+
+#ifndef RELEASE
+#define ASSERT(expr) \
+    if (!(expr))     \
+    pannic(__FILE__, __LINE__, __func__, #expr) // 如果expr不成立错误则执行
+
+void pannic(const char *file, int line, const char *func, const char *cond);
+#else
+#define ASSERT(expr) ((void)0)
+#endif
+
 #endif

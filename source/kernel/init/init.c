@@ -5,12 +5,14 @@
 #include "cpu/irq.h"
 #include "tools/log.h"
 #include "os_cfg.h"
+#include "tools/klib.h"
 
 /**
  * 内核入口
  */
 void kernel_init(boot_info_t *boot_info)
 {
+    ASSERT(3 < 2);
     cpu_init();
 
     init_log(); // 初始化打印函数
