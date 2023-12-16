@@ -18,6 +18,7 @@
         "time.h": "c",
         "irq.h": "c",
         "klib.h": "c",
-        "log.h": "c"
+        "log.h": "c",
+        "__threading_support": "c"
     },
 }

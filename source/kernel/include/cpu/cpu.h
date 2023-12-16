@@ -3,7 +3,8 @@
 #define CPU_H
 
 #include "comm/types.h"
-
+#define EFLAGS_DEFALUT (1 << 1)
+#define EFLAGS_IF (1 << 9)
 #pragma pack(1)
 // 定义gdt表的结构
 typedef struct _segment_desc_t
@@ -54,10 +55,13 @@ typedef struct _tss_t
 
 #define SEG_TYPE_CODE (1 << 3) // gdt表中代码段的类型
 #define SEG_TYPE_DATA (0 << 3) // gdt表中数据段的类型
+#define SEG_TYPE_TSS (9 << 0)  // gdt表中tss的类型
 
 #define SEG_TYPE_RW (1 << 1) // 数据段是否可以读写
 
 void cpu_init(void);
 void segment_desc_set(int selector, uint32_t base, uint32_t limit, uint16_t attr);
 void gate_desc_set(gate_desc_t *desc, uint16_t selector, uint32_t offset, uint16_t attr);
+int gdt_alloc_des(void);
+void switch_to_tss(uint32_t tss_sel);
 #endif
