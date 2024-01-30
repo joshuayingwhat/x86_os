@@ -8,6 +8,7 @@
 #include "tools/klib.h"
 #include "core/task.h"
 #include "comm/cpu_instr.h"
+#include "tools/list.h"
 
 /**
  * 内核入口
@@ -34,8 +35,18 @@ void init_task_entry(void)
         task_switch_from_to(&init_task, &first_task);
     }
 }
+
+void list_test()
+{
+    list_t list;
+
+    list_init(&list);
+    log_prinf("list: first =0x%x, last = 0x%x, count = %d",
+              list_first(&list), list_last(&list), list_count(&list));
+}
 void init_main(void)
 {
+    list_test();
     log_prinf("os is running");
     log_prinf("version %s", OS_VERSION);
     log_prinf("%d %d %x %c", -10, 20, 0x30, 'c');
