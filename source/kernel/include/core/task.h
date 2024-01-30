@@ -6,7 +6,7 @@
 // 描述进程和程序的运行
 typedef struct _task_t
 {
-    uint32_t *stack;
+    // uint32_t *stack;
     tss_t tss;
     int tss_sel; // 保存tss选择子
 } task_t;

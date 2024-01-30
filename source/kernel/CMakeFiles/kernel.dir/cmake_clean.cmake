@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/kernel.dir/init/start.S.o"
   "CMakeFiles/kernel.dir/tools/klib.c.o"
   "CMakeFiles/kernel.dir/tools/klib.c.o.d"
+  "CMakeFiles/kernel.dir/tools/list.c.o"
+  "CMakeFiles/kernel.dir/tools/list.c.o.d"
   "CMakeFiles/kernel.dir/tools/log.c.o"
   "CMakeFiles/kernel.dir/tools/log.c.o.d"
   "kernel"

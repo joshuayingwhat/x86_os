@@ -169,10 +169,24 @@ source/kernel/CMakeFiles/kernel.dir/tools/klib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kernel.dir/tools/klib.c.s"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/klib.c -o CMakeFiles/kernel.dir/tools/klib.c.s
 
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.o: source/kernel/CMakeFiles/kernel.dir/flags.make
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.o: source/kernel/tools/list.c
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.o: source/kernel/CMakeFiles/kernel.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/list.c.o"
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/kernel/CMakeFiles/kernel.dir/tools/list.c.o -MF CMakeFiles/kernel.dir/tools/list.c.o.d -o CMakeFiles/kernel.dir/tools/list.c.o -c /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/list.c
+
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kernel.dir/tools/list.c.i"
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/list.c > CMakeFiles/kernel.dir/tools/list.c.i
+
+source/kernel/CMakeFiles/kernel.dir/tools/list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kernel.dir/tools/list.c.s"
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/list.c -o CMakeFiles/kernel.dir/tools/list.c.s
+
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/CMakeFiles/kernel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/log.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/log.c.o"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/kernel/CMakeFiles/kernel.dir/tools/log.c.o -MF CMakeFiles/kernel.dir/tools/log.c.o.d -o CMakeFiles/kernel.dir/tools/log.c.o -c /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/log.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.i: cmake_force
@@ -192,6 +206,7 @@ kernel_OBJECTS = \
 "CMakeFiles/kernel.dir/dev/time.c.o" \
 "CMakeFiles/kernel.dir/init/init.c.o" \
 "CMakeFiles/kernel.dir/tools/klib.c.o" \
+"CMakeFiles/kernel.dir/tools/list.c.o" \
 "CMakeFiles/kernel.dir/tools/log.c.o"
 
 # External object files for target kernel
@@ -204,10 +219,11 @@ source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/dev/time.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/init/init.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o
+source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/list.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/log.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/build.make
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable kernel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable kernel"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kernel.dir/link.txt --verbose=$(VERBOSE)
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && x86_64-elf-objcopy -S kernel.elf /Users/joshuayingwhat/diy-x86os-master/start/start/../../image/kernel.elf
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && x86_64-elf-objdump -x -d -S -m i386 /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/kernel.elf > kernel_dis.txt

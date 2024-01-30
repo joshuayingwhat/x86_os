@@ -285,6 +285,30 @@ tools/klib.c.s:
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.s
 .PHONY : tools/klib.c.s
 
+tools/list.o: tools/list.c.o
+.PHONY : tools/list.o
+
+# target to build an object file
+tools/list.c.o:
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.o
+.PHONY : tools/list.c.o
+
+tools/list.i: tools/list.c.i
+.PHONY : tools/list.i
+
+# target to preprocess a source file
+tools/list.c.i:
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.i
+.PHONY : tools/list.c.i
+
+tools/list.s: tools/list.c.s
+.PHONY : tools/list.s
+
+# target to generate assembly for a file
+tools/list.c.s:
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.s
+.PHONY : tools/list.c.s
+
 tools/log.o: tools/log.c.o
 .PHONY : tools/log.o
 
@@ -337,6 +361,9 @@ help:
 	@echo "... tools/klib.o"
 	@echo "... tools/klib.i"
 	@echo "... tools/klib.s"
+	@echo "... tools/list.o"
+	@echo "... tools/list.i"
+	@echo "... tools/list.s"
 	@echo "... tools/log.o"
 	@echo "... tools/log.i"
 	@echo "... tools/log.s"
