@@ -54,4 +54,10 @@ static inline list_node_t *list_last(list_t *list)
 {
     return list->last;
 }
+
+// 往链表的头部插入节点
+void list_insert_first(list_t *list, list_node_t *node);
+
+// 往链表的尾部插入节点
+void list_insert_last(list_t *list, list_node_t *node);
 #endif
