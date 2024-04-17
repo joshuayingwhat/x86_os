@@ -60,4 +60,9 @@ void list_insert_first(list_t *list, list_node_t *node);
 
 // 往链表的尾部插入节点
 void list_insert_last(list_t *list, list_node_t *node);
+
+// 删除链表的头部
+list_node_t *list_remove_first(list_t *list);
+
+list_node_t *list_remove(list_t *list, list_node_t *node);
 #endif
