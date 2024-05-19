@@ -19,6 +19,7 @@
         "irq.h": "c",
         "klib.h": "c",
         "log.h": "c",
-        "__threading_support": "c"
+        "__threading_support": "c",
+        "__node_handle": "c"
     },
 }

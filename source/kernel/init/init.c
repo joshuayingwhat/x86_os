@@ -85,6 +85,24 @@ void list_test(void)
         list_remove(&list, node);
     }
     log_prinf("list: first=0x%x, last=0x%x, count=%d", list_first(&list), list_last(&list), list_count(&list));
+
+    struct type_t
+    {
+        int i;
+        list_node_t node;
+
+    } v = {0x123456};
+
+    list_node_t *v_node = &v.node;
+    struct type_t *p = list_node_parent(v_node, struct type_t, node);
+    if (p->i == 0x123456)
+    {
+        log_prinf("获取结构体的地址正确 %d", &p);
+    }
+    else
+    {
+        log_prinf("错误");
+    }
 }
 
 void init_main(void)
