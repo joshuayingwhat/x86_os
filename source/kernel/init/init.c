@@ -45,7 +45,7 @@ void init_main(void)
     log_prinf("%d %d %x %c", -10, 20, 0x30, 'c');
     // irq_enable_global();//暂时先关掉定时中断
 
-    task_init(&init_task, (uint32_t)init_task_entry, (uint32_t)&init_task_stack[1024]);
+    task_init(&init_task, "init task", (uint32_t)init_task_entry, (uint32_t)&init_task_stack[1024]);
     task_first_init();
     int count = 0;
     for (;;)

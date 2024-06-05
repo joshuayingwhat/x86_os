@@ -12,5 +12,5 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.o: \
  /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/include/tools/klib.h \
  /usr/local/Cellar/x86_64-elf-gcc/13.1.0/lib/gcc/x86_64-elf/13.1.0/include/stdarg.h \
  /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/include/core/task.h \
- /Users/joshuayingwhat/diy-x86os-master/start/start/source/comm/cpu_instr.h \
- /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/include/tools/list.h
+ /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/include/tools/list.h \
+ /Users/joshuayingwhat/diy-x86os-master/start/start/source/comm/cpu_instr.h

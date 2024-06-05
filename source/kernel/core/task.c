@@ -33,21 +33,19 @@ static int tss_init(task_t *task, uint32_t entry, uint32_t esp)
     return 0;
 }
 
-int task_init(task_t *task, uint32_t entry, uint32_t esp)
+int task_init(task_t *task, const char *name, uint32_t entry, uint32_t esp)
 {
     ASSERT(task != (task_t *)0);
-
+    // 复制进程名到task.name中
+    kernel_strncpy(task->name, name, TASK_NAME_SIZE);
+    task->state = TASK_CREATED; // 将开始创建的进程状态设置成task_created
     tss_init(task, entry, esp);
-    // uint32_t *pesp = (uint32_t *)esp;
-    // if (pesp)
-    // {
-    //     *(--pesp) = entry;
-    //     *(--pesp) = 0;
-    //     *(--pesp) = 0;
-    //     *(--pesp) = 0;
-    //     *(--pesp) = 0;
-    //     task->stack = pesp;
-    // }
+    list_node_init(&task->all_node);
+    list_node_init(&task->run_node);
+
+    // 将进程插入到就绪队列中
+    task_set_ready(task);
+    list_insert_last(&task_manager.task_list, &task->all_node);
     return 0;
 }
 
@@ -68,7 +66,7 @@ void task_manager_init(void)
 
 void task_first_init(void)
 {
-    task_init(&task_manager.first_task, 0, 0); //??为什么入口设置为0，堆栈也设置为0
+    task_init(&task_manager.first_task, "first task", 0, 0); //??为什么入口设置为0，堆栈也设置为0
     write_tr(task_manager.first_task.tss_sel);
     task_manager.currt_task = &task_manager.first_task;
 }
@@ -76,4 +74,15 @@ void task_first_init(void)
 task_t *task_first_task(void)
 {
     return &task_manager.first_task;
+}
+
+void task_set_ready(task_t *task)
+{
+    list_insert_last(&task_manager.ready_list, &task->run_node);
+    task->state = TASK_READY;
+}
+// 将任务从就绪队列中移除 此时任务的状态不确定 有可能是等待 有可能是睡眠因此不设置状态置
+void task_set_block(task_t *task)
+{
+    list_remove(&task_manager.ready_list, &task->run_node);
 }
