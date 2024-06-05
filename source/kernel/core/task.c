@@ -86,3 +86,43 @@ void task_set_block(task_t *task)
 {
     list_remove(&task_manager.ready_list, &task->run_node);
 }
+
+task_t *task_current(void)
+{
+    return task_manager.currt_task;
+}
+
+int sys_sched_yield()
+{
+    if (list_count(&task_manager.ready_list) > 1)
+    {
+        // 如果就绪队列中有其他的任务则将头部任务移到尾部
+        task_t *current_task = task_current();
+        // 从队列头部取出当前任务
+        task_set_block(current_task);
+        // 将当前任务添加到队列尾部
+        task_set_ready(current_task);
+        // 将cpu的使用权让给下一个任务
+        task_dispatch();
+    }
+    // 没有其他的任务了就直接返回
+    return 0;
+}
+
+task_t *task_next_run(void)
+{
+    list_node_t *task_node = list_first(&task_manager.ready_list);
+    return list_node_parent(task_node, task_t, run_node);
+}
+
+void task_dispatch(void)
+{
+    task_t *to = task_next_run();
+    if (to != task_manager.currt_task)
+    {
+        task_t *from = task_current();
+        task_manager.currt_task = to;
+        to->state = TASK_RUNNING;
+        task_switch_from_to(from, to);
+    }
+}

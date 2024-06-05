@@ -34,7 +34,7 @@ void init_task_entry(void)
     for (;;)
     {
         log_prinf("init_task_entry: %d", count++);
-        task_switch_from_to(&init_task, task_first_task());
+        sys_sched_yield();
     }
 }
 
@@ -52,6 +52,6 @@ void init_main(void)
     {
         log_prinf("init_main: %d", count++);
         // 手动切换
-        task_switch_from_to(task_first_task(), &init_task);
+        sys_sched_yield();
     }
 }
