@@ -5,6 +5,8 @@
 #include "tools/list.h"
 
 #define TASK_NAME_SIZE 32
+
+#define TASK_TIME_SLICE_DEFAULT 10
 // 描述进程和程序的运行
 typedef struct _task_t
 {
@@ -17,6 +19,8 @@ typedef struct _task_t
         TASK_WAITTING,
     } state;
 
+    int time_ticks;
+    int slice_ticks; // 任务执行的倒计时
     char name[TASK_NAME_SIZE];
     // uint32_t *stack;
     list_node_t run_node;
@@ -51,4 +55,5 @@ int sys_sched_yield(void);
 void task_dispatch(void);
 task_t *task_next_run(void);
 task_t *task_current(void);
+void task_time_tick(void);
 #endif

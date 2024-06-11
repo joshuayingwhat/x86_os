@@ -38,6 +38,8 @@ int task_init(task_t *task, const char *name, uint32_t entry, uint32_t esp)
     ASSERT(task != (task_t *)0);
     // 复制进程名到task.name中
     kernel_strncpy(task->name, name, TASK_NAME_SIZE);
+    task->time_ticks = TASK_TIME_SLICE_DEFAULT;
+    task->slice_ticks = task->time_ticks;
     task->state = TASK_CREATED; // 将开始创建的进程状态设置成task_created
     tss_init(task, entry, esp);
     list_node_init(&task->all_node);
@@ -124,5 +126,20 @@ void task_dispatch(void)
         task_manager.currt_task = to;
         to->state = TASK_RUNNING;
         task_switch_from_to(from, to);
+    }
+}
+// 当时间片到了之后将运行中队列中当前的任务移到队列尾部
+// 并取出运行队列中的下一个任务
+void task_time_tick()
+{
+    task_t *current_task = task_current();
+    // 当前任务的运行时间片已经为0了
+    if (--current_task->slice_ticks == 0)
+    {
+        // 将这次的任务重新设置计数
+        current_task->slice_ticks = current_task->time_ticks;
+        task_set_block(current_task);
+        task_set_ready(current_task);
+        task_dispatch();
     }
 }

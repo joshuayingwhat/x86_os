@@ -1,8 +1,9 @@
-#include "time.h"
+#include "dev/time.h"
 #include "comm/types.h"
 #include "comm/cpu_instr.h"
 #include "os_cfg.h"
 #include "cpu/irq.h"
+#include "core/task.h"
 
 static uint32_t sys_tick; // 每一次中断加一
 
@@ -11,6 +12,8 @@ void do_handler_time(exception_frame_t *frame)
     sys_tick++; // 每一次定时中断来了之后就自增1
     // 对应的中断完成后还需要通知8259芯片继续响应接下来的中断
     pic_send_eoi(IRQ0_TIMER);
+    // 任务定时处理
+    task_time_tick();
 }
 
 static void init_pit(void)

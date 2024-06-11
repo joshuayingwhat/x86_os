@@ -15,7 +15,7 @@
 static inline uint8_t inb(uint16_t port)
 {
     uint8_t rv;
-    __asm__ __volatile__("inb %[p], %[v]"
+            __asm__ __volatile__("inb %[p], %[v]"
                          : [v] "=a"(rv)
                          : [p] "d"(port));
     return rv;
