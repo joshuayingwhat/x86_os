@@ -2,6 +2,7 @@
 #include "tools/log.h"
 #include "tools/klib.h"
 #include "comm/cpu_instr.h"
+#include "cpu/irq.h"
 
 #define COM1_PORT 0X3F8
 void init_log()
@@ -26,6 +27,7 @@ void log_prinf(const char *fmt, ...)
     kernel_vsprintf(str_buf, fmt, args);
     va_end(args);
 
+    irq_state_t state = irq_enter_protection();
     const char *p = str_buf;
     while (*p != '\0')
     {
@@ -37,4 +39,5 @@ void log_prinf(const char *fmt, ...)
     // 输出完成后换行，回车
     outb(COM1_PORT, '\r');
     outb(COM1_PORT, '\n');
+    irq_leave_protection(state);
 }

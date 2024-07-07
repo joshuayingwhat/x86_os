@@ -1,6 +1,8 @@
 #ifndef IRQ_H
 #define IRQ_H
 
+#include "comm/types.h"
+
 // 中断号
 #define IRQ0_DE 0
 #define IRQ1_DB 1
@@ -92,4 +94,11 @@ void irq_disable_global(void);
 void irq_enable_global(void);
 
 void pic_send_eoi(int irq_num);
+
+typedef uint32_t irq_state_t;
+// 进入临界区保护执行关中断
+irq_state_t irq_enter_protection(void);
+// 退出临界区保护执行开中断
+void irq_leave_protection(irq_state_t state);
+
 #endif

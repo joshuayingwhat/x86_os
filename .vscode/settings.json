@@ -20,6 +20,7 @@
         "klib.h": "c",
         "log.h": "c",
         "__threading_support": "c",
-        "__node_handle": "c"
+        "__node_handle": "c",
+        "*.tcc": "c"
     },
 }

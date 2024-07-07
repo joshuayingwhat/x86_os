@@ -22,8 +22,8 @@ source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.o: source/kernel/cpu/cpu.c \
 
 source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.o: source/kernel/cpu/irq.c \
   source/kernel/include/cpu/irq.h \
-  source/kernel/include/cpu/cpu.h \
   source/comm/types.h \
+  source/kernel/include/cpu/cpu.h \
   source/comm/cpu_instr.h \
   source/comm/types.h \
   source/kernel/include/os_cfg.h \
@@ -46,7 +46,7 @@ source/kernel/CMakeFiles/kernel.dir/init/init.c.o: source/kernel/init/init.c \
   source/comm/types.h \
   source/kernel/include/cpu/cpu.h \
   source/comm/types.h \
-  source/kernel/dev/time.h \
+  source/kernel/include/dev/time.h \
   source/kernel/include/cpu/irq.h \
   source/kernel/include/tools/log.h \
   source/kernel/include/os_cfg.h \
@@ -73,10 +73,9 @@ source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c \
   source/kernel/include/tools/klib.h \
   source/comm/types.h \
   source/comm/cpu_instr.h \
-  source/comm/types.h
+  source/comm/types.h \
+  source/kernel/include/cpu/irq.h
 
-
-source/kernel/dev/time.h:
 
 source/kernel/init/init.h:
 

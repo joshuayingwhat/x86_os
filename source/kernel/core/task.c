@@ -4,6 +4,7 @@
 #include "cpu/cpu.h"
 #include "tools/log.h"
 #include "comm/cpu_instr.h"
+#include "cpu/irq.h"
 
 static task_manager_t task_manager;
 // 任务切换后设置另外一个程序的tss
@@ -46,8 +47,10 @@ int task_init(task_t *task, const char *name, uint32_t entry, uint32_t esp)
     list_node_init(&task->run_node);
 
     // 将进程插入到就绪队列中
+    irq_state_t state = irq_enter_protection();
     task_set_ready(task);
     list_insert_last(&task_manager.task_list, &task->all_node);
+    irq_leave_protection(state);
     return 0;
 }
 
@@ -96,6 +99,7 @@ task_t *task_current(void)
 
 int sys_sched_yield()
 {
+    irq_state_t state = irq_enter_protection();
     if (list_count(&task_manager.ready_list) > 1)
     {
         // 如果就绪队列中有其他的任务则将头部任务移到尾部
@@ -107,6 +111,7 @@ int sys_sched_yield()
         // 将cpu的使用权让给下一个任务
         task_dispatch();
     }
+    irq_leave_protection(state);
     // 没有其他的任务了就直接返回
     return 0;
 }
@@ -119,6 +124,7 @@ task_t *task_next_run(void)
 
 void task_dispatch(void)
 {
+    irq_state_t state = irq_enter_protection();
     task_t *to = task_next_run();
     if (to != task_manager.currt_task)
     {
@@ -127,6 +133,7 @@ void task_dispatch(void)
         to->state = TASK_RUNNING;
         task_switch_from_to(from, to);
     }
+    irq_leave_protection(state);
 }
 // 当时间片到了之后将运行中队列中当前的任务移到队列尾部
 // 并取出运行队列中的下一个任务
