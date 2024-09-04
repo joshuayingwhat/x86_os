@@ -33,7 +33,8 @@ void init_task_entry(void)
     int count = 0;
     for (;;)
     {
-        log_prinf("init_task_entry: %d", count++);
+        log_prinf("init task: %d", count++);
+        sys_sleep(2000);
     }
 }
 
@@ -42,13 +43,15 @@ void init_main(void)
     log_prinf("os is running");
     log_prinf("version %s", OS_VERSION);
     log_prinf("%d %d %x %c", -10, 20, 0x30, 'c');
-    irq_enable_global(); // 暂时先关掉定时中断
 
     task_init(&init_task, "init task", (uint32_t)init_task_entry, (uint32_t)&init_task_stack[1024]);
     task_first_init();
+
+    irq_enable_global();
     int count = 0;
     for (;;)
     {
         log_prinf("init_main: %d", count++);
+        sys_sleep(1000);
     }
 }

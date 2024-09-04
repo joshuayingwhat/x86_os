@@ -21,6 +21,8 @@
         "log.h": "c",
         "__threading_support": "c",
         "__node_handle": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "locale": "c",
+        "string": "c"
     },
 }

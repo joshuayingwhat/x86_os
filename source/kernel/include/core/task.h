@@ -19,6 +19,7 @@ typedef struct _task_t
         TASK_WAITTING,
     } state;
 
+    int sleep_ticks; // 任务延迟时长
     int time_ticks;
     int slice_ticks; // 任务执行的倒计时
     char name[TASK_NAME_SIZE];
@@ -41,7 +42,9 @@ typedef struct _task_manager_t
     task_t *currt_task;
     list_t ready_list; // 就绪队列
     list_t task_list;
+    list_t sleep_list; // 任务的睡眠队列
     task_t first_task;
+    task_t idle_task; //空闲进程对列
 } task_manager_t;
 
 void task_manager_init(void);
@@ -56,4 +59,9 @@ void task_dispatch(void);
 task_t *task_next_run(void);
 task_t *task_current(void);
 void task_time_tick(void);
+
+void task_set_sleep(task_t *task, uint32_t ticks); // 将任务插入睡眠队列
+void task_set_wakeup(task_t *task);                // 将任务从睡眠队列移除出去(到就绪对垒)
+void sys_sleep(uint32_t ms);
+
 #endif

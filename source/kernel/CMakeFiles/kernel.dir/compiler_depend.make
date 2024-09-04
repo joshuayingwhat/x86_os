@@ -11,14 +11,16 @@ source/kernel/CMakeFiles/kernel.dir/core/task.c.o: source/kernel/core/task.c \
   source/kernel/include/os_cfg.h \
   source/kernel/include/tools/log.h \
   source/comm/cpu_instr.h \
-  source/comm/types.h
+  source/comm/types.h \
+  source/kernel/include/cpu/irq.h
 
 source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.o: source/kernel/cpu/cpu.c \
   source/kernel/include/cpu/cpu.h \
   source/comm/types.h \
   source/kernel/include/os_cfg.h \
   source/comm/cpu_instr.h \
-  source/comm/types.h
+  source/comm/types.h \
+  source/kernel/include/cpu/irq.h
 
 source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.o: source/kernel/cpu/irq.c \
   source/kernel/include/cpu/irq.h \
@@ -83,11 +85,11 @@ source/kernel/init/init.c:
 
 source/kernel/dev/time.c:
 
-source/kernel/include/cpu/irq.h:
-
 source/kernel/cpu/irq.c:
 
 source/kernel/cpu/cpu.c:
+
+source/kernel/include/cpu/irq.h:
 
 source/kernel/include/tools/log.h:
 
