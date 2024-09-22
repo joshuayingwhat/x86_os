@@ -9,6 +9,7 @@
 #include "core/task.h"
 #include "comm/cpu_instr.h"
 #include "tools/list.h"
+#include "ipc/sem.h"
 
 /**
  * 内核入口
@@ -28,13 +29,14 @@ void kernel_init(boot_info_t *boot_info)
 
 static uint32_t init_task_stack[1024];
 static task_t init_task;
+static sem_t sem;
 void init_task_entry(void)
 {
     int count = 0;
     for (;;)
     {
+        sem_wait(&sem);
         log_prinf("init task: %d", count++);
-        sys_sleep(2000);
     }
 }
 
@@ -47,11 +49,13 @@ void init_main(void)
     task_init(&init_task, "init task", (uint32_t)init_task_entry, (uint32_t)&init_task_stack[1024]);
     task_first_init();
 
+    sem_init(&sem, 0);
     irq_enable_global();
     int count = 0;
     for (;;)
     {
         log_prinf("init_main: %d", count++);
+        sem_notify(&sem);
         sys_sleep(1000);
     }
 }

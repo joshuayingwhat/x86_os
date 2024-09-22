@@ -25,6 +25,7 @@ typedef struct _task_t
     char name[TASK_NAME_SIZE];
     // uint32_t *stack;
     list_node_t run_node;
+    list_node_t wait_node;
     list_node_t all_node; // 所有的list
     tss_t tss;
     int tss_sel; // 保存tss选择子
@@ -44,7 +45,7 @@ typedef struct _task_manager_t
     list_t task_list;
     list_t sleep_list; // 任务的睡眠队列
     task_t first_task;
-    task_t idle_task; //空闲进程对列
+    task_t idle_task; // 空闲进程对列
 } task_manager_t;
 
 void task_manager_init(void);
