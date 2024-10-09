@@ -78,6 +78,12 @@ source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.o: source/kernel/ipc/sem.c \
   source/comm/types.h \
   source/kernel/include/cpu/irq.h
 
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o: source/kernel/tools/bitmap.c \
+  source/kernel/include/tools/bitmap.h \
+  source/comm/types.h \
+  source/kernel/include/tools/klib.h \
+  /usr/local/Cellar/x86_64-elf-gcc/13.1.0/lib/gcc/x86_64-elf/13.1.0/include/stdarg.h
+
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o: source/kernel/tools/klib.c \
   source/kernel/include/tools/klib.h \
   source/comm/types.h \
@@ -107,6 +113,8 @@ source/kernel/tools/log.c:
 
 source/kernel/tools/list.c:
 
+source/kernel/include/tools/bitmap.h:
+
 source/comm/boot_info.h:
 
 source/kernel/ipc/sem.c:
@@ -120,6 +128,8 @@ source/kernel/init/init.c:
 source/kernel/dev/time.c:
 
 source/kernel/cpu/irq.c:
+
+source/kernel/tools/bitmap.c:
 
 source/kernel/include/tools/log.h:
 

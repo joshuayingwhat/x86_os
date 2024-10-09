@@ -14,6 +14,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/kernel.dir/ipc/mutex.c.o.d"
   "CMakeFiles/kernel.dir/ipc/sem.c.o"
   "CMakeFiles/kernel.dir/ipc/sem.c.o.d"
+  "CMakeFiles/kernel.dir/tools/bitmap.c.o"
+  "CMakeFiles/kernel.dir/tools/bitmap.c.o.d"
   "CMakeFiles/kernel.dir/tools/klib.c.o"
   "CMakeFiles/kernel.dir/tools/klib.c.o.d"
   "CMakeFiles/kernel.dir/tools/list.c.o"

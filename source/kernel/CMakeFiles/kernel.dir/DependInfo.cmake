@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/init/init.c" "source/kernel/CMakeFiles/kernel.dir/init/init.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/init/init.c.o.d"
   "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/ipc/mutex.c" "source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.o.d"
   "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/ipc/sem.c" "source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.o.d"
+  "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/bitmap.c" "source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o.d"
   "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/klib.c" "source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o.d"
   "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/list.c" "source/kernel/CMakeFiles/kernel.dir/tools/list.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/tools/list.c.o.d"
   "/Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/log.c" "source/kernel/CMakeFiles/kernel.dir/tools/log.c.o" "gcc" "source/kernel/CMakeFiles/kernel.dir/tools/log.c.o.d"

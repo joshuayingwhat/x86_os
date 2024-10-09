@@ -24,6 +24,7 @@
         "*.tcc": "c",
         "locale": "c",
         "string": "c",
-        "mutex.h": "c"
+        "mutex.h": "c",
+        "cstdint": "cpp"
     },
 }

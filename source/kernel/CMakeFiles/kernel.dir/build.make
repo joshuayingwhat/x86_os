@@ -183,10 +183,24 @@ source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kernel.dir/ipc/sem.c.s"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/ipc/sem.c -o CMakeFiles/kernel.dir/ipc/sem.c.s
 
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o: source/kernel/CMakeFiles/kernel.dir/flags.make
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o: source/kernel/tools/bitmap.c
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o: source/kernel/CMakeFiles/kernel.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o"
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o -MF CMakeFiles/kernel.dir/tools/bitmap.c.o.d -o CMakeFiles/kernel.dir/tools/bitmap.c.o -c /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/bitmap.c
+
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kernel.dir/tools/bitmap.c.i"
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/bitmap.c > CMakeFiles/kernel.dir/tools/bitmap.c.i
+
+source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kernel.dir/tools/bitmap.c.s"
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/bitmap.c -o CMakeFiles/kernel.dir/tools/bitmap.c.s
+
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o: source/kernel/tools/klib.c
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o: source/kernel/CMakeFiles/kernel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o -MF CMakeFiles/kernel.dir/tools/klib.c.o.d -o CMakeFiles/kernel.dir/tools/klib.c.o -c /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/klib.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/klib.c.i: cmake_force
@@ -200,7 +214,7 @@ source/kernel/CMakeFiles/kernel.dir/tools/klib.c.s: cmake_force
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.o: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.o: source/kernel/tools/list.c
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.o: source/kernel/CMakeFiles/kernel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/list.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/list.c.o"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/kernel/CMakeFiles/kernel.dir/tools/list.c.o -MF CMakeFiles/kernel.dir/tools/list.c.o.d -o CMakeFiles/kernel.dir/tools/list.c.o -c /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/list.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/list.c.i: cmake_force
@@ -214,7 +228,7 @@ source/kernel/CMakeFiles/kernel.dir/tools/list.c.s: cmake_force
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/CMakeFiles/kernel.dir/flags.make
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/tools/log.c
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.o: source/kernel/CMakeFiles/kernel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/log.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object source/kernel/CMakeFiles/kernel.dir/tools/log.c.o"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && /usr/local/bin/x86_64-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/kernel/CMakeFiles/kernel.dir/tools/log.c.o -MF CMakeFiles/kernel.dir/tools/log.c.o.d -o CMakeFiles/kernel.dir/tools/log.c.o -c /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/tools/log.c
 
 source/kernel/CMakeFiles/kernel.dir/tools/log.c.i: cmake_force
@@ -235,6 +249,7 @@ kernel_OBJECTS = \
 "CMakeFiles/kernel.dir/init/init.c.o" \
 "CMakeFiles/kernel.dir/ipc/mutex.c.o" \
 "CMakeFiles/kernel.dir/ipc/sem.c.o" \
+"CMakeFiles/kernel.dir/tools/bitmap.c.o" \
 "CMakeFiles/kernel.dir/tools/klib.c.o" \
 "CMakeFiles/kernel.dir/tools/list.c.o" \
 "CMakeFiles/kernel.dir/tools/log.c.o"
@@ -250,12 +265,13 @@ source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/dev/time.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/init/init.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.o
+source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/list.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/tools/log.c.o
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/build.make
 source/kernel/kernel: source/kernel/CMakeFiles/kernel.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable kernel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/joshuayingwhat/diy-x86os-master/start/start/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable kernel"
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kernel.dir/link.txt --verbose=$(VERBOSE)
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && x86_64-elf-objcopy -S kernel.elf /Users/joshuayingwhat/diy-x86os-master/start/start/../../image/kernel.elf
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel && x86_64-elf-objdump -x -d -S -m i386 /Users/joshuayingwhat/diy-x86os-master/start/start/source/kernel/kernel.elf > kernel_dis.txt

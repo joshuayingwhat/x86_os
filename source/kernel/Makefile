@@ -309,6 +309,30 @@ ipc/sem.c.s:
 	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.s
 .PHONY : ipc/sem.c.s
 
+tools/bitmap.o: tools/bitmap.c.o
+.PHONY : tools/bitmap.o
+
+# target to build an object file
+tools/bitmap.c.o:
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o
+.PHONY : tools/bitmap.c.o
+
+tools/bitmap.i: tools/bitmap.c.i
+.PHONY : tools/bitmap.i
+
+# target to preprocess a source file
+tools/bitmap.c.i:
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.i
+.PHONY : tools/bitmap.c.i
+
+tools/bitmap.s: tools/bitmap.c.s
+.PHONY : tools/bitmap.s
+
+# target to generate assembly for a file
+tools/bitmap.c.s:
+	cd /Users/joshuayingwhat/diy-x86os-master/start/start && $(MAKE) $(MAKESILENT) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.s
+.PHONY : tools/bitmap.c.s
+
 tools/klib.o: tools/klib.c.o
 .PHONY : tools/klib.o
 
@@ -412,6 +436,9 @@ help:
 	@echo "... ipc/sem.o"
 	@echo "... ipc/sem.i"
 	@echo "... ipc/sem.s"
+	@echo "... tools/bitmap.o"
+	@echo "... tools/bitmap.i"
+	@echo "... tools/bitmap.s"
 	@echo "... tools/klib.o"
 	@echo "... tools/klib.i"
 	@echo "... tools/klib.s"
