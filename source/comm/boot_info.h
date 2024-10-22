@@ -9,8 +9,8 @@ typedef struct _boot_info_t
 {
     struct
     {
-        uint32_t start;
-        uint32_t size;
+        uint32_t start; // 起始地址
+        uint32_t size;  // 大小
     } ram_region_cfg[BOOT_RAW_REGION_MAX];
     int ram_region_count;
 } boot_info_t;

@@ -25,6 +25,8 @@
         "locale": "c",
         "string": "c",
         "mutex.h": "c",
-        "cstdint": "cpp"
+        "cstdint": "cpp",
+        "memory.h": "c",
+        "bitmap.h": "c"
     },
 }
